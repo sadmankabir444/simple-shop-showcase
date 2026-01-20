@@ -29,7 +29,7 @@ export const dishes: Dish[] = [
     prepTime: '25 min',
     calories: 520,
     featured: true,
-    chef: 'Chef Antonio',
+    chef: 'Chef Fahim',
   },
   {
     id: '2',
@@ -59,7 +59,7 @@ export const dishes: Dish[] = [
     prepTime: '10 min',
     calories: 290,
     featured: true,
-    chef: 'Chef Antonio',
+    chef: 'Chef Fahim',
   },
   {
     id: '4',
@@ -83,13 +83,13 @@ export const dishes: Dish[] = [
     longDescription: 'Tender veal shanks braised for hours in white wine, tomatoes, and aromatic vegetables. Served with traditional gremolata and accompanied by our signature saffron risotto. A Milanese classic.',
     price: 52,
     category: 'main',
-    image: 'https://images.unsplash.com/photo-1544025162-d76978a8e2d5?w=800',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBcWHJ063_p6zTja7dU3oalsKTv3A7zRE3uQ&s',
     ingredients: ['Veal shank', 'White wine', 'Tomatoes', 'Gremolata', 'Saffron', 'Arborio rice'],
     dietary: ['Gluten-Free'],
     prepTime: '180 min',
     calories: 680,
     featured: false,
-    chef: 'Chef Antonio',
+    chef: 'Chef Fahim',
   },
   {
     id: '6',

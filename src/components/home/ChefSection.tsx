@@ -17,12 +17,12 @@ const ChefSection = () => {
               Meet the Mastermind
             </span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-              Chef Antonio
+              Chef Fahim
               <br />
               <span className="text-primary">Rossi</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              With over three decades of culinary mastery, Chef Antonio Rossi brings the authentic flavors of his grandmother's kitchen to every dish. Trained in the finest restaurants of Milan and Rome, he returned home to continue his family's legacy.
+              With over three decades of culinary mastery, Chef Md Fahim brings the authentic flavors of his grandmother's kitchen to every dish. Trained in the finest restaurants of Milan and Rome, he returned home to continue his family's legacy.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
               "Cooking is not just about food—it's about memories, love, and bringing people together. Every dish I create carries a piece of my heart and the traditions of my ancestors."
@@ -54,7 +54,7 @@ const ChefSection = () => {
             <div className="relative">
               <img
                 src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80"
-                alt="Chef Antonio Rossi"
+                alt="Chef Md Fahim"
                 className="rounded-2xl shadow-2xl w-full"
               />
               {/* Decorative Frame */}
@@ -63,7 +63,7 @@ const ChefSection = () => {
               {/* Signature Badge */}
               <div className="absolute -bottom-8 -left-8 bg-foreground text-primary-foreground rounded-2xl p-6 shadow-xl">
                 <p className="font-serif text-lg italic">"La cucina è amore"</p>
-                <p className="text-sm opacity-70 mt-1">— Chef Antonio</p>
+                <p className="text-sm opacity-70 mt-1">— Chef Fahim</p>
               </div>
             </div>
           </motion.div>

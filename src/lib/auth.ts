@@ -19,7 +19,7 @@ export const login = (email: string, password: string): { success: boolean; user
   if (email === MOCK_CREDENTIALS.email && password === MOCK_CREDENTIALS.password) {
     const user: User = {
       email: MOCK_CREDENTIALS.email,
-      name: 'Chef Antonio',
+      name: 'Chef Md Fahim',
       role: 'admin',
     };
     
