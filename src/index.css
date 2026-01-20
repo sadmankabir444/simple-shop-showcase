@@ -8,16 +8,16 @@
 
 @layer base {
   :root {
-    /* Warm cream background */
-    --background: 40 33% 97%;
-    --foreground: 20 14% 15%;
+    /* Warm off-white background */
+    --background: 30 20% 95%;
+    --foreground: 20 10% 20%;
 
-    /* Cards with subtle warmth */
-    --card: 40 40% 99%;
-    --card-foreground: 20 14% 15%;
+    /* Cards with warm cream */
+    --card: 30 15% 92%;
+    --card-foreground: 20 10% 20%;
 
-    --popover: 40 40% 99%;
-    --popover-foreground: 20 14% 15%;
+    --popover: 30 15% 92%;
+    --popover-foreground: 20 10% 20%;
 
     /* Rich burgundy/wine primary */
     --primary: 350 65% 35%;
@@ -28,8 +28,8 @@
     --secondary-foreground: 145 30% 25%;
 
     /* Muted warm tones */
-    --muted: 35 25% 92%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 30 15% 85%;
+    --muted-foreground: 20 10% 40%;
 
     /* Forest green accent */
     --accent: 145 35% 30%;
@@ -38,21 +38,21 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 40 33% 97%;
 
-    --border: 35 20% 88%;
-    --input: 35 20% 88%;
+    --border: 30 12% 75%;
+    --input: 30 12% 80%;
     --ring: 350 65% 35%;
 
     --radius: 0.75rem;
 
     /* Custom restaurant tokens */
-    --gold: 42 75% 55%;
-    --gold-foreground: 20 14% 15%;
-    --warm-overlay: 35 40% 20%;
+    --gold: 42 80% 60%;
+    --gold-foreground: 20 10% 15%;
+    --warm-overlay: 30 25% 25%;
     
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(350 65% 35% / 0.9), hsl(350 45% 25% / 0.95));
-    --gradient-warm: linear-gradient(180deg, hsl(40 33% 97%), hsl(35 25% 92%));
-    --gradient-card: linear-gradient(145deg, hsl(40 40% 99%), hsl(35 25% 95%));
+    --gradient-warm: linear-gradient(180deg, hsl(30 20% 95%), hsl(30 15% 85%));
+    --gradient-card: linear-gradient(145deg, hsl(30 15% 92%), hsl(30 10% 85%));
     
     /* Shadows */
     --shadow-soft: 0 4px 20px -4px hsl(20 14% 15% / 0.08);
@@ -71,23 +71,23 @@
   }
 
   .dark {
-    --background: 20 14% 10%;
-    --foreground: 40 20% 95%;
+    --background: 20 10% 15%;
+    --foreground: 40 15% 90%;
 
-    --card: 20 14% 12%;
-    --card-foreground: 40 20% 95%;
+    --card: 20 8% 18%;
+    --card-foreground: 40 15% 90%;
 
-    --popover: 20 14% 12%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 20 8% 18%;
+    --popover-foreground: 40 15% 90%;
 
     --primary: 350 55% 50%;
     --primary-foreground: 40 20% 95%;
 
-    --secondary: 145 15% 18%;
-    --secondary-foreground: 145 20% 80%;
+    --secondary: 145 12% 25%;
+    --secondary-foreground: 145 25% 85%;
 
-    --muted: 20 12% 18%;
-    --muted-foreground: 40 10% 60%;
+    --muted: 20 10% 25%;
+    --muted-foreground: 40 15% 65%;
 
     --accent: 145 30% 40%;
     --accent-foreground: 40 20% 95%;
@@ -95,12 +95,12 @@
     --destructive: 0 62% 50%;
     --destructive-foreground: 40 20% 95%;
 
-    --border: 20 12% 20%;
-    --input: 20 12% 20%;
+    --border: 20 8% 30%;
+    --input: 20 8% 25%;
     --ring: 350 55% 50%;
 
-    --gold: 42 65% 50%;
-    --gold-foreground: 20 14% 10%;
+    --gold: 42 70% 55%;
+    --gold-foreground: 20 10% 12%;
 
     --sidebar-background: 20 14% 8%;
     --sidebar-foreground: 40 20% 90%;

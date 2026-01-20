@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import { fadeIn, staggerContainer } from '@/lib/animations';
 
 const galleryImages = [
   {
@@ -15,7 +16,7 @@ const galleryImages = [
     alt: 'Wine cellar',
   },
   {
-    src: 'https://images.unsplash.com/photo-1574966739987-65e38db0f7f9?w=600&q=80',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKgl6AQO579tlsjoGXaMmyvh0ZAQasBepJmQ&s',
     alt: 'Table setting',
   },
   {
@@ -36,32 +37,35 @@ const GallerySection = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeIn('up', 0)}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
           <span className="text-gold font-medium tracking-wider uppercase text-sm">
             Our Gallery
           </span>
           <h2 className="font-serif text-4xl md:text-5xl font-bold text-primary-foreground mt-3 mb-4">
-            A Visual <span className="text-gold">Journey</span>
+            Roman Flavors <span className="text-gold">in Bangladesh</span>
           </h2>
           <p className="text-primary-foreground/70 max-w-2xl mx-auto">
-            Step inside our world of culinary artistry and elegant ambiance.
+            Step inside our unique blend of Roman culinary traditions and Bangladeshi hospitality.
           </p>
         </motion.div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <motion.div 
+          variants={staggerContainer(0.1, 0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="grid grid-cols-2 md:grid-cols-3 gap-4"
+        >
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.1 }}
+              variants={fadeIn('up', 0.1 + index * 0.1)}
               className={`relative overflow-hidden rounded-xl ${
                 index === 0 ? 'md:col-span-2 md:row-span-2' : ''
               }`}
@@ -84,7 +88,7 @@ const GallerySection = () => {
               </div>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -6,6 +6,7 @@ import ChefSection from '@/components/home/ChefSection';
 import TestimonialsSection from '@/components/home/TestimonialsSection';
 import GallerySection from '@/components/home/GallerySection';
 import NewsletterSection from '@/components/home/NewsletterSection';
+import ClientTestimonials from '@/components/home/ClientTestimonials';
 
 const Index = () => {
   return (
@@ -15,6 +16,7 @@ const Index = () => {
       <FeaturedDishesSection />
       <ChefSection />
       <TestimonialsSection />
+      <ClientTestimonials />
       <GallerySection />
       <NewsletterSection />
     </Layout>

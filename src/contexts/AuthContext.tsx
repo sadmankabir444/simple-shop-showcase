@@ -1,10 +1,12 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { User, isAuthenticated, getCurrentUser, login as authLogin, logout as authLogout } from '@/lib/auth';
+import { firebaseSignInWithGoogle, firebaseSignOut, isFirebaseAuthenticated, getCurrentFirebaseUser } from '@/lib/firebaseAuth';
 
 interface AuthContextType {
   user: User | null;
   isLoggedIn: boolean;
   login: (email: string, password: string) => { success: boolean; error?: string };
+  loginWithGoogle: () => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
   isLoading: boolean;
 }
@@ -31,13 +33,22 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     return { success: result.success, error: result.error };
   };
 
+  const loginWithGoogle = async (): Promise<{ success: boolean; error?: string }> => {
+    const result = await firebaseSignInWithGoogle();
+    if (result.success && result.user) {
+      setUser(result.user);
+    }
+    return { success: result.success, error: result.error };
+  };
+
   const logout = () => {
     authLogout();
+    firebaseSignOut();
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, isLoggedIn: !!user, login, logout, isLoading }}>
+    <AuthContext.Provider value={{ user, isLoggedIn: !!user, login, loginWithGoogle, logout, isLoading }}>
       {children}
     </AuthContext.Provider>
   );

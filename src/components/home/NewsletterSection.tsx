@@ -4,6 +4,7 @@ import { Send, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
+import { fadeIn } from '@/lib/animations';
 
 const NewsletterSection = () => {
   const [email, setEmail] = useState('');
@@ -19,8 +20,8 @@ const NewsletterSection = () => {
     await new Promise((resolve) => setTimeout(resolve, 1000));
     
     toast({
-      title: 'Welcome to Bella Cucina!',
-      description: 'Thank you for subscribing to our newsletter.',
+      title: 'Welcome to Casa Romana!',
+      description: 'Thank you for joining our fusion community.',
     });
     
     setEmail('');
@@ -38,23 +39,36 @@ const NewsletterSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeIn('up', 0)}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="max-w-3xl mx-auto text-center"
         >
-          <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6">
+          <motion.div
+            variants={fadeIn('up', 0.1)}
+            className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-6"
+          >
             <Mail className="h-8 w-8 text-primary" />
-          </div>
-          <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Stay <span className="text-primary">Connected</span>
-          </h2>
-          <p className="text-muted-foreground text-lg mb-8">
-            Subscribe to receive exclusive recipes, special offers, and updates on our seasonal menus.
-          </p>
+          </motion.div>
+          <motion.h2 
+            variants={fadeIn('up', 0.2)}
+            className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-4"
+          >
+            Join Our <span className="text-primary">Community</span>
+          </motion.h2>
+          <motion.p 
+            variants={fadeIn('up', 0.3)}
+            className="text-muted-foreground text-lg mb-8"
+          >
+            Subscribe to receive exclusive recipes, special offers, and updates on our unique Roman-Bangladeshi fusion menu.
+          </motion.p>
 
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto">
+          <motion.form 
+            variants={fadeIn('up', 0.4)}
+            onSubmit={handleSubmit} 
+            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
+          >
             <Input
               type="email"
               placeholder="Enter your email address"
@@ -73,11 +87,14 @@ const NewsletterSection = () => {
                 </>
               )}
             </Button>
-          </form>
+          </motion.form>
 
-          <p className="text-muted-foreground text-sm mt-4">
-            We respect your privacy. Unsubscribe at any time.
-          </p>
+          <motion.p 
+            variants={fadeIn('up', 0.5)}
+            className="text-muted-foreground text-sm mt-4"
+          >
+            We respect your privacy. Unsubscribe anytime. Taste the fusion!
+          </motion.p>
         </motion.div>
       </div>
     </section>

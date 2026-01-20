@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { fadeIn, staggerContainer } from '@/lib/animations';
 
 const ChefSection = () => {
   return (
@@ -7,48 +8,57 @@ const ChefSection = () => {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={fadeIn('left', 0)}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="order-2 lg:order-1"
           >
             <span className="text-primary font-medium tracking-wider uppercase text-sm">
-              Meet the Mastermind
+              Meet the Visionary
             </span>
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mt-3 mb-6">
-              Chef Fahim
+              Chef Md Fahim
               <br />
-              <span className="text-primary">Rossi</span>
+              <span className="text-primary">Founder</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-              With over three decades of culinary mastery, Chef Md Fahim brings the authentic flavors of his grandmother's kitchen to every dish. Trained in the finest restaurants of Milan and Rome, he returned home to continue his family's legacy.
+              With over 14 years of culinary expertise, Chef Md Fahim brings authentic Roman recipes to Bangladesh. Trained in Rome's finest kitchens, he combines Italian techniques with local flavors to create something truly unique.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-8">
-              "Cooking is not just about food—it's about memories, love, and bringing people together. Every dish I create carries a piece of my heart and the traditions of my ancestors."
+              "Cooking is about fusion—not just of flavors, but of cultures. Every dish tells the story of two worlds coming together in harmony."
             </p>
 
             {/* Achievements */}
-            <div className="grid grid-cols-3 gap-6">
-              {[
-                { value: '2', label: 'Michelin Stars' },
-                { value: '30+', label: 'Years Experience' },
-                { value: '12', label: 'Culinary Awards' },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center p-4 bg-secondary rounded-xl">
+            <motion.div 
+              variants={staggerContainer(0.1, 0.2)}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid grid-cols-3 gap-6"
+            >
+              {[{ value: '1', label: 'National Award' },
+                { value: '14+', label: 'Years Experience' },
+                { value: '80+', label: 'Signature Dishes' },
+              ].map((stat, index) => (
+                <motion.div 
+                  key={stat.label}
+                  variants={fadeIn('up', 0.3 + index * 0.1)}
+                  className="text-center p-4 bg-secondary rounded-xl"
+                >
                   <p className="font-serif text-2xl font-bold text-primary">{stat.value}</p>
                   <p className="text-muted-foreground text-sm">{stat.label}</p>
-                </div>
+                </motion.div>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
 
           {/* Image */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            variants={fadeIn('right', 0.2)}
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
             className="order-1 lg:order-2 relative"
           >
             <div className="relative">
@@ -61,10 +71,13 @@ const ChefSection = () => {
               <div className="absolute -top-4 -left-4 w-full h-full border-2 border-gold rounded-2xl -z-10" />
               
               {/* Signature Badge */}
-              <div className="absolute -bottom-8 -left-8 bg-foreground text-primary-foreground rounded-2xl p-6 shadow-xl">
+              <motion.div 
+                variants={fadeIn('up', 0.5)}
+                className="absolute -bottom-8 -left-8 bg-foreground text-primary-foreground rounded-2xl p-6 shadow-xl"
+              >
                 <p className="font-serif text-lg italic">"La cucina è amore"</p>
                 <p className="text-sm opacity-70 mt-1">— Chef Fahim</p>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

@@ -25,7 +25,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-3 group">
             <ChefHat className="h-8 w-8 text-primary transition-transform group-hover:rotate-12" />
             <span className="font-serif text-2xl font-bold text-foreground">
-              Bella <span className="text-primary">Cucina</span>
+              Casa <span className="text-primary">Romana</span>
             </span>
           </Link>
 
